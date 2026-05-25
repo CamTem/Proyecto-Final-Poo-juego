@@ -698,3 +698,63 @@ tk.Button(zona_acciones,
           width=10, 
           relief="flat",
           cursor="hand2").pack(side="left", padx=5)
+
+# =====================================================
+# PANTALLA 4: FIN DEL JUEGO
+# =====================================================
+
+lbl_fin_titulo  = tk.Label(frame_fin, text="", bg=FONDO, font=F_GRANDE)
+lbl_fin_titulo.pack(pady=(90, 8))
+
+lbl_fin_mensaje = tk.Label(frame_fin, text="", bg=FONDO, fg=TEXTO, font=F_MEDIA)
+lbl_fin_mensaje.pack(pady=(0, 8))
+
+lbl_fin_puntos  = tk.Label(frame_fin, text="", bg=FONDO, fg=DORADO, font=F_NORMAL)
+lbl_fin_puntos.pack(pady=(0, 40))
+
+def configurar_pantalla_fin(victoria):
+    # Cambia el texto de la pantalla de fin segun el resultado
+    if victoria:
+        lbl_fin_titulo.config(text="VICTORIA!", fg=VERDE)
+        lbl_fin_mensaje.config(text=f"Derrotaste al Dragon, {jugador.nombre}!")
+    else:
+        lbl_fin_titulo.config(text="GAME OVER", fg=ROJO)
+        lbl_fin_mensaje.config(text=f"Caiste en batalla, {jugador.nombre}.")
+    lbl_fin_puntos.config(text=f"Puntuacion final: {jugador.puntos} puntos")
+
+tk.Button(frame_fin,
+          text="Jugar de nuevo",
+          command=mostrar_seleccion,
+          bg=BOTON, 
+          fg=TEXTO, 
+          font=F_NORMAL,
+          width=18, 
+          relief="flat",
+          cursor="hand2").pack(pady=7)
+
+tk.Button(frame_fin,
+          text="Ver Ranking",
+          command=mostrar_inicio,
+          bg=BOTON, 
+          fg=TEXTO, 
+          font=F_NORMAL,
+          width=18, 
+          relief="flat",
+          cursor="hand2").pack(pady=7)
+
+tk.Button(frame_fin,
+          text="Salir",
+          command=ventana.quit,
+          bg=BOTON, 
+          fg=TEXTO, 
+          font=F_NORMAL,
+          width=18, 
+          relief="flat",
+          cursor="hand2").pack(pady=7)
+
+
+# =====================================================
+# Mostramos la pantalla de inicio y abrimos la ventana
+# =====================================================
+mostrar_inicio()
+ventana.mainloop()  # mantiene la ventana abierta esperando clicks
