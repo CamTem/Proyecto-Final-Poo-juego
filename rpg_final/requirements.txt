@@ -1,0 +1,3 @@
+
+tkinter viene incluido con Python 3 (no necesita instalarse)
+No se requieren librerias externas
