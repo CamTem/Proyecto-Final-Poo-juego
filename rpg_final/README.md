@@ -30,12 +30,12 @@ JSON
 Instrucciones de instalación
 Requisitos
 
+Descargar el proyecto
+
 Tener instalado:
 
 Python 3
 
 Ejecución
 
-Abrir una terminal en la carpeta del proyecto y ejecutar:
-
-python main.py
+abrir el archivo main.py de la carpeta
